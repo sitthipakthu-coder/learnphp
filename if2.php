@@ -28,13 +28,16 @@
     <p>---------------------------------------------------------------------------------------</p>
     <?php
 
-    $balance = 1000;
-    $transfcr = 1000;
+    $balance = 1200;
+    $withdraw = 1000;
 
-    if ($transfcr <= $balance) {
+    if ($withdraw <= $balance) {
         echo "เงินในบัญชี $balance<br>";
-        $balance -= $transfcr;
+        echo "จำนวนเงินที่ถอน $withdraw<br>";
+        $balance -= $withdraw;
         echo "มีเงินคงเหลือ $balance <br>";
+    } else {
+        echo "ไม่สามารถกดเงินได้<br>";
     }
     echo "จบโปรแกรม"
 
