@@ -97,12 +97,65 @@
     echo "โบนัสรวมเงินเดือน = " . $satary;
     echo "<hr>";
     ?>
+
+
+    <?php
+    //รับเงินเดือนเข้ามา
+
+    function gettotal($salary, $count)
+    {
+        $month = $count;
+        $total1 = $salary *= $month;
+        return $total1;
+    }
+
+    //ส่งผลการคำนวณรายได้
+    $amount = 30000;
+    $month = 4;
+    echo "เงินเดือน = " . $amount . " บาท <br>";
+    echo "ระยะเวลา = " . $month . " เดือน <br>";
+    $total = gettotal($amount, $month);
+    echo "รายได้ต่อปี = " . $total . " บาท <br>";
+    ?>
     <?php
 
+    function showdata($name, $lastname, $city = "ไม่พบข้อมูล")
+    {
 
+        echo "<hr>ชื่อ " . $name . "<br>";
+        echo "นามสกุล " . $lastname . "<br>";
+        echo "เมือง " . $city . "<br>";
+    }
+
+    showdata("ตัง1", "ธังศิริ", "ห้วยขวาง");
+    showdata("ตัง2", "ธังศิริ", "ห้วยขวาง");
+    showdata("ตัง2", "ธังศิริ",);
     ?>
+    <hr>
+    <b>ขอบเขตตัวแปร</b>
+    <p>local variable ตัวแปรที่ทำงานอยู่ในฟังก์ชั่นมีขอบเขตการทำงานตั้งแต่จุดเริ่มต้นไปจนถึงจุดสิ้นสุดของฟังก์ชั่น</p>
+    <p>gobal variant ตัวแปรที่ทำงานอยู่นอกฟังก์ชั่นมีขอบเขตการทำงานตั้งแต่จุดเริ่มต้นไปจนถึงสุดสิ้นสุดของโฟล์ที่ประกาศใช้</p>
 
+    <?php
+    //gobal variant 
+    $x = 500;
+    $y = 50;
 
+    function showdatatest()
+    {   //local variable $x;
+        $z = 50000;
+        //แปลงเป็น gobal variant
+        global $x;
+        $GLOBALS["name"] = "gg"; //สร้างแบบ gobal variant พร้อมข้อมูล
+        echo "ตัวแปร x " . $x . "<br>";
+        echo "ตัวแปร z " . $z . "<br>";
+        echo "ตัวแปร name " . $GLOBALS["name"] . "<br>";
+    }
+
+    showdatatest();
+    echo "ตัวแปร name " . $name . "<br>";
+    echo "ตัวแปร x " . $x . "<br>";
+    ?>
 </body>
 
 </html>
