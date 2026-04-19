@@ -186,7 +186,28 @@
     echo "<br>";
     array_push($fruits, "มะม่วง");
     print_r($fruits);
+    echo "<br>";
+    array_pop($fruits);
+    print_r($fruits);
+    echo "<br>";
+    array_unshift($fruits, "แตงโม");
+    print_r($fruits);
+    echo "<br>";
+    array_shift($fruits);
+    echo "<hr>";
+    print_r($fruits);
+    echo "<br>";
+    //ใส่เลข 0 ถ้าต้องการเพิ่ม ไม่ใช่การลบหรือแทนที่
+    array_splice($fruits, 1, 0, array("องุ่น", "ฝรั่ง"));
+    print_r($fruits);
+    echo "<br>";
+    array_splice($fruits, 1, 2);
+    print_r($fruits);
     ?>
+    <hr>
+    <b>ฟังก์ชั่นเรียงลำดับ Array แบบเดี่ยว</b>
+    <p>sort() เรียงจากน้อยไปมาก ถ้าเป็นข้อความเรียกจากพยัญชนะไปสระ</p>
+    <p>rsort() เรียงจากมากไปน้อย ถ้าเป็นข้อความเรียกจากสระไปพยัญชนะ</p>
 </body>
 
 </html>
