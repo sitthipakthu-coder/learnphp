@@ -69,8 +69,7 @@
     echo "<br>";
 
     ?>
-    <img src="/php/img/array.png" height="200" width="400">
-
+    <img src="/img/array.png" height="200" width="400">
     <?php
     $number1 = range(1, 10);
     dump_pre($number1);
@@ -115,7 +114,7 @@
         <?php } ?>
     </ul>
 
-    <b>Array 2 มิติ</b>
+    <b>Array 2 มิติด้วย For_loop</b>
     <p>Array ที่มีข้อมูลสมาชิกภายในเป็น array (array ซ้อน array)</p>
     <p>มีโครงสร้างเป็นรูปแบบ แถว (แถวนอน) และคอลัมน์ (แนวตั้ง )</p>
 
@@ -124,7 +123,7 @@
         ["keyboard", "คีย์บอร์ด", 1500],
         ["mouse", "เมาส์", 900],
         ["speaker", "ลำโพง", 2500],
-        ["speaker", "ลำโพง", 2500]
+        ["speaker2", "ลำพูน", 3000]
     ];
 
     echo $product[1][2];
@@ -137,9 +136,56 @@
         echo "สินค้า " . $row . "<br>";
 
         for ($colum = 0; $colum < count($product[$row]); $colum++) {
-            echo "รายการ " . $product[$row][$colum] . "<br>";
+            echo " รายการ " . $product[$row][$colum] . "<br>";
         }
+        echo "<hr>";
     }
+    ?>
+
+    <b>Array 2 มิติด้วย Foreach</b><br>
+    <?php
+    $products = [
+        ["keyboard", "คีย์บอร์ด", 1500],
+        ["mouse", "เมาส์", 900],
+        ["speaker", "ลำโพง", 2500],
+        ["speaker2", "ลำพูน", 3000]
+    ];
+    foreach ($products as $product) {
+        echo "รายการสินค้า<br>";
+        echo "ชื่อสินค้า (th) = " . $product[1] . "<br>";
+        echo "ชื่อสินค้า (eng) = " . $product[0] . "<br>";
+        echo "ราคา = " . $product[2] . "<hr>";
+    }
+
+    ?>
+    <b>Array 2 มิติด้วย Foreach แบบใส่key</b><br>
+    <?php
+    $products = [
+        ["EN" => "keyboard", "TH" => "คีย์บอร์ด", "price" => 1500],
+        ["EN" => "mouse", "TH" => "เมาส์", "price" =>  900],
+        ["EN" => "speaker", "TH" => "ลำโพง", "price" =>  2500],
+        ["EN" => "speaker2", "TH" => "ลำพูน", "price" =>  3000]
+    ];
+    foreach ($products as $product) {
+        echo "รายการสินค้า<br>";
+        echo "ชื่อสินค้า (th) = " . $product["TH"] . "<br>";
+        echo "ชื่อสินค้า (en) = " . $product["EN"] . "<br>";
+        echo "ราคา = " . $product["price"] . "<hr>";
+    }
+    ?>
+
+    <b>ฟังก์ชั่นเพิ่มและลบสมาชิกใน Array</b>
+    <p>array_push() ใช้เพิ่มสมาชิกในตำแหน่งสุดท้าย</p>
+    <p>array_pop() ใช้ลบสมาชิกตำแหน่งสุดท้าย</p>
+    <p>array_unshift() ใช้เพิ่มสมาชิกในตำแน่งแรก</p>
+    <p>array_shift() ใช้ลบสมาชิกในตำแหน่งแรก</p>
+    <p>array_splice() ใช้ลบและเพิ่มสมาชิกในตำแหน่งที่ต้องการ</p>
+    <?php
+    $fruits = ["มะละกอ", "ฝรั่ง", "มะนาว", "ทุเรียน"];
+    print_r($fruits);
+    echo "<br>";
+    array_push($fruits, "มะม่วง");
+    print_r($fruits);
     ?>
 </body>
 
