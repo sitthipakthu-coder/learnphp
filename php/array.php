@@ -208,6 +208,68 @@
     <b>ฟังก์ชั่นเรียงลำดับ Array แบบเดี่ยว</b>
     <p>sort() เรียงจากน้อยไปมาก ถ้าเป็นข้อความเรียกจากพยัญชนะไปสระ</p>
     <p>rsort() เรียงจากมากไปน้อย ถ้าเป็นข้อความเรียกจากสระไปพยัญชนะ</p>
+    <?php
+    print_r($number);
+    echo "<br>";
+    rsort($number);
+    echo "<br>";
+    print_r($number);
+    echo "<hr>";
+    print_r($fruits);
+    echo "<br>";
+    rsort($fruits);
+    echo "<br>";
+    print_r($fruits);
+    ?>
+    <hr>
+    <b>ฟังก์ชั่นเรียงลำดับ Array แบบจับคู่</b>
+    <p>asort() เรียงข้อมูลจากน้อยไปมาก</p>
+    <p>arsort() เรียงข้อมูลจากมากไปน้อย</p>
+    <p>ksort() เรียง index จากน้อยไปมาก</p>
+    <p>krsort() เรียง index จากมากไปน้อย</p>
+
+    <?php
+
+    $number = [10, 2, 3, 45, 150, 60, -10, 30, 40, 50, 60, 70];
+    $city = ["ชลบุรี", "ระยอง", "ระนอง", "กาญจบุรี", "เชียงใหม่", "นครพนม", "มุกดาหาร", "กาฬสินธุ์"];
+
+    $arr = ["A" => 20, "C" => 15, "B" => 30, "D" => 25];
+    $country = ["TH'" => "ไทย", "Jp" => "ญี่ปุ่น", "US" => "สหรัฐอเมริกา", "CN" => "จีน"];
+
+    //เรียงข้อมูล
+    echo "เรียงตัวเลขแบบปกติ ";
+    print_r($arr);
+    echo "<br>";
+    echo "เรียงตัวเลขจากน้อยไปมาก ";
+    asort($arr);
+    print_r($arr);
+    echo "<br>";
+    arsort($arr);
+    echo "เรียงตัวเลขจากมากไปน้อย ";
+    print_r($arr);
+    echo "<hr>";
+
+    echo "เรียงคำแบบปกติ ";
+    print_r($country);
+    echo "<hr>";
+    echo "<br>";
+    echo "เรียงคำจากน้อยไปมาก ";
+    asort($country);
+    print_r($country);
+    echo "<br>";
+    arsort($country);
+    echo "เรียงคำจากมากไปน้อย ";
+    print_r($country);
+    //เรียง key หรือ index
+    echo "<br><hr>";
+    print_r($arr);
+    echo "<br>";
+    ksort($arr);
+    print_r($arr);
+    echo "<br>";
+    krsort($arr);
+    print_r($arr);
+    ?>
 </body>
 
 </html>
